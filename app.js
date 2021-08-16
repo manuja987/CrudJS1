@@ -8,7 +8,9 @@ mongoose.connect(url, {useNewUrlParser:true})
 const con = mongoose.connection
 
 con.on('open', () => {
+
     console.log('connected to database')
+
 })
 
 app.use(express.json())
@@ -17,5 +19,6 @@ const employeeRouter = require('./routes/employees')
 app.use('/employees',employeeRouter)
 
 app.listen(9000, () => {
+
     console.log('Server has started')
 })
